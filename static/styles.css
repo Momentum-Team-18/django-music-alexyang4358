@@ -8,3 +8,18 @@ body {
     padding-left: 13px;
     background-color: rgb(238, 244, 246);
 }
+
+.card {
+  background-color: #fff;
+  border-radius: 0.25rem;
+  box-shadow: 0 0.5em 1em -0.125em rgba(10,10,10,.1), 0 0 0 1px rgba(10,10,10,.02);
+  color: #4a4a4a;
+  max-width: 500px;
+  position: relative;
+  margin-left: 20px;
+}
+
+.button {
+  margin-left: 20px;
+  margin-bottom: 20px;
+}

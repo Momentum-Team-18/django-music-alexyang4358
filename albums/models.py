@@ -11,7 +11,6 @@ class Album(models.Model):
     artist = models.CharField(max_length=200)
     title = models.CharField(max_length=200)
     created_date = models.DateTimeField(default=timezone.now)
-    published_date = models.DateTimeField(blank=True, null=True)
 
     def publish(self):
         self.published_date = timezone.now()
