@@ -9,7 +9,12 @@
 <body>
 
     <h1>This is where you add a new album</h1>
-    {{ form }}
-    <button type="submit">Submit</button>
+
+    <form method='POST'>
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Create</button>
+    </form>
+
 </body>
 </html>

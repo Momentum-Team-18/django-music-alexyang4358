@@ -49,9 +49,11 @@
                         </figure>
                 </div>
                 <div class="media-content">
-                        <p class="title is-4"><a href="{% url 'album_detail' album.pk %}">{{album.title}}</a></p>
+                        <p class="title is-4">{{album.title}}</p>
                         <p class="subtitle is-6">{{album.artist}}</p>
-                        <time>{{album.created_date}}</time>
+                        <time>{{album.created_date}}</time> 
+                        <a href="{% url 'delete_album' album.pk %}">DELETE</a>
+                        <a>EDIT</a>
                 </div>
             </div>
         </div>
