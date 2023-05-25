@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+{% block content %}
+    <br>
+    <button class="button"><a href="{% url 'new_album' %}">New Album</a></button>
+        {% for album in albums %}
+        <div class="card">
+            <div class="card-content">
+                <div class="media">
+                    <div class="media-left">
+                            <figure class="image is-28x28">
+                                <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
+                            </figure>
+                    </div>
+                    <div class="media-content">
+                            <p class="title is-4"><a href="{% url 'album_detail' album.pk %}">{{album.title}}</a></p>
+                            <p class="subtitle is-6">{{album.artist}}</p>
+                            <time>{{album.created_date}}</time>
+                            <p class="is-size-7">added by: {{album.author}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        {% endfor %}
+{% endblock %}

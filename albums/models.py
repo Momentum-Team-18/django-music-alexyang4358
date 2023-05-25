@@ -8,7 +8,8 @@ from django.conf import settings
 class Album(models.Model):
     author = models.ForeignKey(
         settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-    artist = models.CharField(max_length=200)
+    artist = models.ForeignKey(
+        to='Artist', on_delete=models.CASCADE)
     title = models.CharField(max_length=200)
     created_date = models.DateTimeField(default=timezone.now)
 
@@ -18,3 +19,10 @@ class Album(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class Artist(models.Model):
+    name = models.CharField(max_length=200)
+
+    def __str__(self):
+        return self.name
