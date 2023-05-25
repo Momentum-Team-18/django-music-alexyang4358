@@ -16,9 +16,14 @@ def album_detail(request, pk):
     return render(request, 'extend/details.html', {'album': album})
 
 
-def artist_detail(request, pk):
-    artist = get_object_or_404(Artist, pk=pk)
-    return render(request, 'extend/artist_detail.html', {'artist': artist})
+def albums_by_artist(request, artist_pk):
+    artist = get_object_or_404(Artist, pk=artist_pk)
+    albums = Album.objects.filter(artist_id=artist_pk)
+    context = {
+        'artist': artist,
+        'albums': albums
+    }
+    return render(request, 'extend/albums_by_artist.html', context)
 
 
 def delete_album(request, pk):

@@ -15,7 +15,7 @@
                     </div>
                     <div class="media-content">
                             <p class="title is-4"><a href="{% url 'album_detail' album.pk %}">{{album.title}}</a></p>
-                            <p class="subtitle is-6">{{album.artist}}</p>
+                            <p class="subtitle is-6"><a href="{% url 'albums_by_artist' album.artist.pk %}">{{album.artist}}</a></p>
                             <time>{{album.created_date}}</time>
                             <p class="is-size-7">added by: {{album.author}}</p>
                     </div>

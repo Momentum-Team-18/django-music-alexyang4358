@@ -9,7 +9,7 @@ class Album(models.Model):
     author = models.ForeignKey(
         settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     artist = models.ForeignKey(
-        to='Artist', on_delete=models.CASCADE)
+        to='Artist', on_delete=models.CASCADE, blank=True, null=True)
     title = models.CharField(max_length=200)
     created_date = models.DateTimeField(default=timezone.now)
 
