@@ -27,6 +27,7 @@ class Migration(migrations.Migration):
                 ('text', models.TextField()),
                 ('author', models.ForeignKey(
                     on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
+                ('cover', models.ImageField(upload_to='images', blank=True, null=True)),
             ],
         ),
     ]

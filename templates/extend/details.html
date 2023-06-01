@@ -2,7 +2,7 @@
 
 {% block title %}Home{% endblock %}
 {% block content %}
-
+<br>
     <div class="card">
         <div class="card-image">
             <figure class="image is-4by3">
@@ -23,10 +23,10 @@
                 <br>
             </div>
     </div>
-    <div class="box">
-        <p>Pick Random Album</p>
-        <a href="{% url 'delete_album' album.pk %}">DELETE</a>
-        <a href="{% url 'edit_album' album.pk%}">EDIT</a>
-    </div>
+    
+        <button class="button"><a href="{% url 'edit_album' album.pk%}">EDIT</a></button>
+        <button class="button is-warning"><a href="{% url 'delete_album' album.pk %}">DELETE</a></button>
+        
+
 
 {% endblock %}
